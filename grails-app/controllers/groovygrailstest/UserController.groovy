@@ -32,31 +32,39 @@ class UserController {
         List listUsers = new ArrayList();
         List listSavedUsers = new ArrayList();
 
-        request.getFile('file').inputStream.eachLine { line ->
-            def userLine = line.split(",")
-            def userInstance = new User(userLine[0], Long.valueOf(userLine[1]),userLine[2])
-            listUsers.add(userInstance)
-        }
+        try{
 
-        def countLine = 0
-        def error
-        for (User user in listUsers) {
-            countLine++
-            user.validate()
-            if (!user.hasErrors()){
-                user.save()
-                listSavedUsers.add(user)
+            request.getFile('file').inputStream.eachLine { line ->
+                def userLine = line.split(",")
+                def userInstance = new User(userLine[0], Long.valueOf(userLine[1]),userLine[2])
+                listUsers.add(userInstance)
             }
-            else {
-                error=true
-                flash.errormessage = message(code: 'upload.error', args: [countLine, user.userid, user.coins, user.username])
-                listSavedUsers.each { userInstance ->
-                    userInstance.delete flush:true }
-                break
+
+            def countLine = 0
+            def error
+            for (User user in listUsers) {
+                countLine++
+                user.validate()
+                if (!user.hasErrors()){
+                    user.save()
+                    listSavedUsers.add(user)
+                }
+                else {
+                    error=true
+                    flash.errormessage = message(code: 'upload.error', args: [countLine, user.userid, user.coins, user.username])
+                    listSavedUsers.each { userInstance ->
+                        userInstance.delete flush:true }
+                    break
+                }
             }
+
+            if (!error)
+                flash.message = message(code: 'upload.success', args: [countLine])
+
         }
-        if (!error)
-            flash.message = message(code: 'upload.success', args: [countLine])
+        catch(Exception e ) {
+            flash.errormessage = "App Error. Please check file"
+        }
 
         redirect (action:'index')
 
