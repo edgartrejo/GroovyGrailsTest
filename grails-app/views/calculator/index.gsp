@@ -32,7 +32,6 @@
 		</ul>
 	</g:hasErrors>
 	<div align="center">
-		%{--<g:form controller="calculator" action="calculate">--}%
 		<table>
 			<tr>
 				<td align="right">

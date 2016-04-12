@@ -83,38 +83,23 @@
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
+			<h1>Test 1</h1>
+			<p>Generate a Grails application that allows uploading a file. Once the file is loaded, the application must validate and parse each line of file information (plaintext) and then upload the information to the database</p>
+			<h1>Test 2</h1>
+			<p>Using this webservice www.webservicex.net/ ConvertTemperature.asmx?WSDL, make a calculator to do conversions of temperature. Preferably the results should be displayed asynchronously.</p>
+			<h1>Test 3</h1>
+			<p>Write a function that returns an array with three dates Date type. The first date should be the first day of the current month, the second must be the current date and the third time should be 23:59 on the last day of the current month</p>
 		</div>
 		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+			<h1>Welcome to Groovy & Grails Test</h1>
+			<p>Congratulations, you have selected to take the test!!!</p>
 
 			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+				<h2>Solutions:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
+					<li><g:link controller="user" action="index">Upload file</g:link></li>
+					<li><g:link controller="calculator" action="index">Calculator</g:link></li>
+					<li><g:link controller="date" action="index">Dates</g:link></li>
 				</ul>
 			</div>
 		</div>
