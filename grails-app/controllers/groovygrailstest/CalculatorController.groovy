@@ -1,13 +1,10 @@
 package groovygrailstest
 
-import org.grails.plugins.wsclient.service.WebService
-import ws.client.ConvertTemp
-import ws.client.ConvertTemperature
-import ws.client.ConvertTemperatureSoap
-import ws.client.TemperatureUnit
+import wsclient.ConvertTemperature
+import wsclient.ConvertTemperatureSoap
 
-import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import wsclient.TemperatureUnit
 
 @Transactional(readOnly = true)
 class CalculatorController {
