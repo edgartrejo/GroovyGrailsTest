@@ -24,8 +24,8 @@ class UserController {
     @Transactional
     def doUpload() {
 
-        List listUsers = new ArrayList();
-        List listSavedUsers = new ArrayList();
+        List listUsers = new ArrayList()
+        List listSavedUsers = new ArrayList()
 
         try{
 
