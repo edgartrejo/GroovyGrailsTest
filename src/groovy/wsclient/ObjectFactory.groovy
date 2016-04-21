@@ -24,7 +24,7 @@ class ObjectFactory {
 
     @XmlElementDecl(namespace = "http://www.webserviceX.NET/", name = "double")
     JAXBElement<Double> createDouble(Double value) {
-        new JAXBElement<Double>(_Double_QNAME, Double.class, null, value);
+        new JAXBElement<Double>(_Double_QNAME, Double.class, null, value)
     }
 
 }
