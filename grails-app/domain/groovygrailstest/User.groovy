@@ -2,9 +2,9 @@ package groovygrailstest
 
 class User {
 
-    String userid;
-    Long coins;
-    String username;
+    String userid
+    Long coins
+    String username
 
     User(String userid, Long coins, String username){
         this.userid = userid
