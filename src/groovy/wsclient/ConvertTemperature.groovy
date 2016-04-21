@@ -1,11 +1,11 @@
 package wsclient
 
 import javax.xml.namespace.QName
-import javax.xml.ws.Service;
-import javax.xml.ws.WebEndpoint;
-import javax.xml.ws.WebServiceClient;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.WebServiceFeature;
+import javax.xml.ws.Service
+import javax.xml.ws.WebEndpoint
+import javax.xml.ws.WebServiceClient
+import javax.xml.ws.WebServiceException
+import javax.xml.ws.WebServiceFeature
 
 
 @WebServiceClient(name = "ConvertTemperature", targetNamespace = "http://www.webserviceX.NET/", wsdlLocation = "http://www.webservicex.net/ConvertTemperature.asmx?WSDL")
