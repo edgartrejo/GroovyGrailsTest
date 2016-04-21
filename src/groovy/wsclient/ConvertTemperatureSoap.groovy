@@ -1,12 +1,12 @@
 package wsclient
 
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebResult;
-import javax.jws.WebService;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.ws.RequestWrapper;
-import javax.xml.ws.ResponseWrapper;
+import javax.jws.WebMethod
+import javax.jws.WebParam
+import javax.jws.WebResult
+import javax.jws.WebService
+import javax.xml.bind.annotation.XmlSeeAlso
+import javax.xml.ws.RequestWrapper
+import javax.xml.ws.ResponseWrapper
 
 @WebService(name = "ConvertTemperatureSoap", targetNamespace = "http://www.webserviceX.NET/")
 @XmlSeeAlso(ObjectFactory.class)
