@@ -20,10 +20,10 @@ class DateController {
         setTimeToBeginningOfDay(firstDate)
         dates[0] = firstDate.getTime()
 
-        def currentDate = getCalendarForNow();
+        def currentDate = getCalendarForNow()
         dates[1] = currentDate.getTime()
 
-        def lastDate = getCalendarForNow();
+        def lastDate = getCalendarForNow()
         lastDate.set(Calendar.DAY_OF_MONTH, lastDate.getActualMaximum(Calendar.DAY_OF_MONTH))
         setTimeToEndofDay(lastDate)
         dates[2] = lastDate.getTime()
